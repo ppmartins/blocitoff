@@ -1,3 +1,11 @@
 <h2>Welcome to Blocitoff</h2>
 
 <h6>You are logged in using the email: <%= @user.email %> </h6>
+
+<div class="col-md-8">
+  <%= render partial: "items/form" %>
+</div>
+
+<div class="col-md-8">
+  <%= render partial: 'item/items' locals: { user: @user.item } %>
+</div>

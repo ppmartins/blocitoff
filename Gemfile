@@ -20,6 +20,10 @@ group :development, :test do
   gem 'byebug'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
