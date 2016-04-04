@@ -2,11 +2,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    
+
     if @item.save
-      redirect_to user_path(current_user), notice: "Item successfully created"
+      redirect_to user_path(current_user)
+      flash[:notice] = "Item successfully created"
     else
-      redirect_to user_path(current_user), alert: "Item not saved"
+      redirect_to user_path(current_user)
+      flash[:alert] = "Item not saved"
     end
   end
 
