@@ -13,6 +13,20 @@ class ItemsController < ApplicationController
   end
 
 
+  def delete
+    @item = Item.new(item_params)
+    @item.user = current_user
+
+    if item.delete
+      flash[:notice] = "Item deleted"
+    else
+      flash[:notice] = "Item failed to delete"
+    end
+      redirect_to("users/show")
+  end
+
+
+
   private
 
   def item_params
