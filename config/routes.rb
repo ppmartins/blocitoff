@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'items/new'
-
   devise_for :users, controllers: { sessions: "users/sessions" }
 
   resources :users, only: [:show] do
-    resources :items, only: [:create]
+    resources :items
   end
 
   get 'welcome/index'

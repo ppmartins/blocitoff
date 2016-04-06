@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-body">
     <%= item.name %>
-    <%= link_to "users/show", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
+    | <%= link_to " Delete Item", user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok', data: {confirm: "Are you sure?"}, remote: true %>
   </div>
 </div>

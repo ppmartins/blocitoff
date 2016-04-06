@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-body">
-    <%= form_for [@user, @item] do |f| %>
+    <%= form_for [current_user, @item] do |f| %>
       <%= f.text_field :name %>
       <%= f.submit "Save", class: 'btn btn-success' %>
     <% end %>
