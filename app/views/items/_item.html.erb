@@ -4,6 +4,7 @@
       <div class="media-body">
         <%= item.name %>
         | <%= link_to " Delete Item", user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok', data: {confirm: "Are you sure?"}, remote: true %>
+        | <%= distance_of_time_in_words(Time.now, (item.created_at + 7.days)) %>
       </div>
     </div>
   </div>
