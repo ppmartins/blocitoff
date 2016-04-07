@@ -1,6 +1,10 @@
 <div class="media">
-  <div class="media-body">
-    <%= item.name %>
-    | <%= link_to " Delete Item", user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok', data: {confirm: "Are you sure?"}, remote: true %>
+  <div class="media-body" id='<%= "item-#{item.id}" %>'>
+    <div class="media">
+      <div class="media-body">
+        <%= item.name %>
+        | <%= link_to " Delete Item", user_item_path(current_user, item), method: :delete, class: 'glyphicon glyphicon-ok', data: {confirm: "Are you sure?"}, remote: true %>
+      </div>
+    </div>
   </div>
 </div>

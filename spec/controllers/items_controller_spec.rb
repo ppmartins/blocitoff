@@ -17,14 +17,14 @@ RSpec.describe ItemsController, type: :controller do
 
   describe "DELETE destroy" do
     it "deletes the item" do
-      expect (user.item).not_to be_nil
+      expect(item.user).not_to be_nil
 #     delete :delete, { user: item }
       delete :destroy, format: :js, user: item
-      expect (user.item).to be_nil
+      expect(item.user).to be_nil
     end
 
     it "redirects to user show views" do
-      expect (user.item).not_to be_nil
+      expect(item.user).not_to be_nil
 #     delete :delete, { user: item }
       delete :destroy, format: :js, user: item
       expect(response).to have_http_status(:success)
